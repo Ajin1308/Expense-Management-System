@@ -10,11 +10,9 @@ def save_return_expenses(expenses):
     2. Returns the stored expense data
     """
     r = random.randint(1, 1000)
-    expense = expenses.update({"expense_id":r})
+    temp_storage = temp_storage.update({"expense_id":r,{"name": expenses.name, "amount": expenses.amount, "category": expenses.category}})
     temp_storage.update(expense)
-    for key, values in temp_storage.items():
-        if key == "expense_id":
-            return {key, values}
+    return temp_storage
 
 def return_all_expenses():
     return temp_storage

@@ -23,6 +23,10 @@ def expenses(expenses: Expense):
 
 @app.get("/api/v1/expenses/")
 async def get_all_expenses():
+    """
+    1. Calls return_all_expenses function
+    2. Returns all expenses data in JSON format
+    """
     try:
         all_data = await return_all_expenses()
         return JSONResponse(content= all_data, status_code=200)
